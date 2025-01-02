@@ -26,4 +26,4 @@
 
 ## Abordagem seguida para esse desafio
 
-* No documento a seguir, descrevo a abordagem a ser seguida nesse desafio. (Incluir link ou detalhes do documento)
+* No documento a seguir, descrevo a abordagem seguida nesse desafio. (Incluir link ou detalhes do documento)

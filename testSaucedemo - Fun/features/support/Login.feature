@@ -1,13 +1,13 @@
 Feature: Login
 
-Test Number: CT001
+    Test Number: CT001
     Scenario: performLoginWithValidCredentials
         Given I am on the Swag Labs login page
         And I click on the Username field and type "performance_glitch_user"
         And I click on the Password field and type "secret_sauce" (Verificar possibilidade de deixar credenciais em lugar a parte)
         Then I should be redirected to the homepage "https://www.saucedemo.com/inventory.html"
 
-Test Number: CT002
+    Test Number: CT002
     Scenario: attemptingToLogInWithInvalidCredentials
         Given I am on the Swag Labs login page
         And I click on the Username field and type "performance_glitch_user"

@@ -26,4 +26,4 @@
 
 ## Abordagem seguida para esse desafio
 
-* No documento a seguir, descrevo alguns bugs que foram encontrados, as ferramentas utilizadas e os resultados obtidos [Planilha de Casos de Teste](https://docs.google.com/document/d/11R9qDWBp_lyDS1bh19GtsgswVnnlUOwHzTv4sRuNTAw/edit?usp=drive_link)
+* No documento a seguir, descrevo alguns bugs que foram encontrados, as ferramentas utilizadas e os resultados obtidos [Relatório](https://docs.google.com/document/d/11R9qDWBp_lyDS1bh19GtsgswVnnlUOwHzTv4sRuNTAw/edit?usp=drive_link)

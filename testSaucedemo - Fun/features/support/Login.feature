@@ -1,10 +1,9 @@
 #npx cucumber-js --tags @feature
 #npx cucumber-js --tags @TestName
-
-@login
 Feature: Login
 
     @loginSenhaCorreta
+    #Test Number:CT001
     Scenario: performLoginWithValidCredentials
         Given I am on the Swag Labs login page
         And I click on the Username field and type "performance_glitch_user"
@@ -12,6 +11,7 @@ Feature: Login
         Then I should be redirected to the homepage "https://www.saucedemo.com/inventory.html"
 
     @loginSenhaIncorreta
+    #Test Number:CT002
     Scenario: attemptingToLogInWithInvalidCredentials
         Given I am on the Swag Labs login page
         And I click on the Username field and type "performance_glitch_user"
@@ -19,7 +19,7 @@ Feature: Login
         Then I should see the error message "Username and password do not match any user in this service"
 
     @loginCampoVazio
-    Test Number: CT003
+    #Test Number:CT003
     Scenario: AttemptingToLogInWithoutEnteringAUsername
         Given I am on the Swag Labs login page
         And I leave the Username field empty
@@ -27,7 +27,7 @@ Feature: Login
         Then I should see the error message "Username is required"
 
     @loginCampoVazio
-    Test Number: CT004
+    #Test Number:CT004
     Scenario: AttemptingToLogInWithoutEnteringAPassword
         Given I am on the Swag Labs login page
         And I click on the Username field and type "performance_glitch_user"

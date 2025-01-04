@@ -4,7 +4,7 @@
 Feature: Cart
 
     @addProduct
-    Test Number: CT005
+    #Test Number: CT005
     Scenario: addProductToTheCart
         Given I am logged into the Swag Labs website
         And I close the alert message "Change your password"
@@ -14,7 +14,7 @@ Feature: Cart
         And the product should display the price "29.99"
 
     @removeProduct
-    Test Number: CT006
+    #Test Number: CT006
     Scenario: removeProductFromTheCart
         Given I am logged into the Swag Labs website
         And I close the alert message "Change your password"

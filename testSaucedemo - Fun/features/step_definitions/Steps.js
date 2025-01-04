@@ -13,20 +13,35 @@ After(async function () {
   await driver.quit();
 });
 
-Given('que estou no site da Ferreira Costa', async function () {
+Given('I am on the Swag Labs login page', async function () {
   await driver.get(xpaths.URL);
 });
 
-When('fecho o popup de cookies', async function () {
-  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CLOSE_COOKIE_POPUP)), timeout);
-  await driver.findElement(By.xpath(xpaths.XPATH_CLOSE_COOKIE_POPUP)).click();
+When('I click on the Username field and type {string}', async function (usernameFromFeature) {
+  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_FOR_USERNAME_FIELD)), 10000);
+  await driver.findElement(By.xpath(xpaths.XPATH_FOR_USERNAME_FIELD)).sendKeys(usernameFromFeature);
 });
 
-When('realizo uma busca por {string}', async function (produto) {
-  await driver.wait(until.elementLocated(By.id('searchProduct')), timeout);
-  await driver.findElement(By.id('searchProduct')).sendKeys(produto);
-  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_SEARCH_BUTTON)), timeout);
-  await driver.findElement(By.xpath(xpaths.XPATH_SEARCH_BUTTON)).click();
+When('I click on the Password field and type {string}', async function (passwordFromFeature) {
+  await driver.wait(until.elementLocated(By.xpath('XPATH_FOR_PASSWORD_FIELD')), 10000);
+  await driver.findElement(By.xpath('XPATH_FOR_PASSWORD_FIELD')).sendKeys(passwordFromFeature);
+});
+
+Then('I should be redirected to the homepage', async function () {
+  const expectedUrlXPath = (xpaths.URLHOME);
+  await driver.wait(until.elementLocated(By.xpath(expectedUrlXPath)), 10000);
+  const currentUrl = await driver.getCurrentUrl();
+  
+  const expectedUrl = await driver.findElement(By.xpath(expectedUrlXPath)).getText();
+  if (currentUrl !== expectedUrl) {
+    throw new Error('Login failed, not redirected to homepage');
+  }
+});
+
+///--CART--//
+
+When('I close the alert message "Change your password"', async function () {
+  await driver.actions().sendKeys(Key.ENTER).perform();
 });
 
 When('seleciono o produto na lista de resultados', async function () {

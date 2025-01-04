@@ -1,6 +1,6 @@
 Feature: Cart
 
-    Test Number: CT003
+    Test Number: CT005
     Scenario: addProductToTheCart
         Given I am logged into the Swag Labs website
         And I close the alert message "Change your password"
@@ -9,7 +9,7 @@ Feature: Cart
         Then I should see the product in the cart with the name "Sauce Labs Backpack"
         And the product should display the price "29.99"
 
-    Test Number: CT004
+    Test Number: CT006
     Scenario: removeProductFromTheCart
         Given I am logged into the Swag Labs website
         And I close the alert message "Change your password"

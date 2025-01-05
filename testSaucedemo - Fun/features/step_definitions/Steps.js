@@ -1,4 +1,4 @@
-const { Given, When, Then, After, Before } = require('@cucumber/cucumber');
+const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
 const { Builder, By, until } = require('selenium-webdriver');
 const xpaths = require('../support/xpaths');
 let driver;
@@ -16,23 +16,17 @@ Given('I am on the Swag Labs login page', async function () {
   await driver.get(xpaths.URL);
 });
 
-When('I click on the Username field and type {string}', async function (usernameFromFeature) {
-  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_FOR_USERNAME_FIELD)), 10000);
-  await driver.findElement(By.xpath(xpaths.XPATH_FOR_USERNAME_FIELD)).sendKeys(usernameFromFeature);
+When('I click on the Username field and type {string}', async function (username) {
+  await driver.findElement(By.xpath(xpaths.XPATH_FOR_USERNAME_FIELD)).sendKeys(username);
 });
 
-When('I click on the Password field and type {string}', async function (passwordFromFeature) {
-  await driver.wait(until.elementLocated(By.xpath('XPATH_FOR_PASSWORD_FIELD')), 10000);
-  await driver.findElement(By.xpath('XPATH_FOR_PASSWORD_FIELD')).sendKeys(passwordFromFeature);
+When('I click on the Password field and type {string}', async function (password) {
+  await driver.findElement(By.xpath(xpaths.XPATH_FOR_PASSWORD_FIELD)).sendKeys(password);
 });
 
-Then('I should be redirected to the homepage', async function () {
-  const expectedUrlXPath = (xpaths.URLHOME);
-  await driver.wait(until.elementLocated(By.xpath(expectedUrlXPath)), 10000);
+Then('I should be redirected to the homepage {string}', async function (expectedUrl) {
   const currentUrl = await driver.getCurrentUrl();
-  
-  const expectedUrl = await driver.findElement(By.xpath(expectedUrlXPath)).getText();
   if (currentUrl !== expectedUrl) {
-    throw new Error('Login failed, not redirected to homepage');
+    throw new Error(`Expected URL to be ${expectedUrl}, but got ${currentUrl}`);
   }
 });

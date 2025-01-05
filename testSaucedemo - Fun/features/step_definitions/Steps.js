@@ -2,14 +2,14 @@ const { Given, When, Then, After, Before } = require('@cucumber/cucumber');
 const { Builder, By, until } = require('selenium-webdriver');
 const xpaths = require('../support/xpaths');
 let driver;
-const timeout = 300000;
+const timeout = 30000;
 
 Before(async function () {
-  driver = await new Builder().forBrowser('chrome').build();
+    driver = await new Builder().forBrowser('chrome').build(); 
 });
 
 After(async function () {
-  await driver.quit();
+  await driver.quit(); 
 });
 
 Given('I am on the Swag Labs login page', async function () {
@@ -35,4 +35,4 @@ Then('I should be redirected to the homepage', async function () {
   if (currentUrl !== expectedUrl) {
     throw new Error('Login failed, not redirected to homepage');
   }
-});g
+});

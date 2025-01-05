@@ -7,7 +7,7 @@ Feature: Login
     #Test Number:CT001
     Scenario: performLoginWithValidCredentials
         Given I am on the Swag Labs login page
-        When Start to type your When step here I click on the Username field and type "performance_glitch_user"
+        When I click on the Username field and type "performance_glitch_user"
         When I click on the Password field and type "secret_sauce"
         Then I should be redirected to the homepage "https://www.saucedemo.com/inventory.html"
 

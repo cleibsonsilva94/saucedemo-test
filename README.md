@@ -22,7 +22,7 @@
 
 ## Test Cases
 
-* Os casos de teste podem ser encontrados aqui: [Planilha de Casos de Teste](https://docs.google.com/spreadsheets/d/1focNywOuat5Ur9Fx5mTRSOoNEWUPgJA1rcnumEXvnkM/edit?usp=drive_link)
+* Os casos de teste podem ser encontrados aqui: [Planilha de Casos de Teste](https://docs.google.com/spreadsheets/d/1focNywOuat5Ur9Fx5mTRSOoNEWUPgJA1rcnumEXvnkM/edit?gid=0#gid=0)
 
 ## Abordagem seguida para esse desafio
 

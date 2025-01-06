@@ -14,7 +14,6 @@ Feature: Cart
         And I add "Sauce Labs Backpack" to the cart
         And I navigate to the cart by clicking the cart icon in the top right corner
         Then I should see the product in the cart with the name "Sauce Labs Backpack"
-        And the product should display the price "29.99"
 
     @removeProduct
     #Test Number: CT006

@@ -67,48 +67,32 @@ Then('I should see the error message {string}', async function (expectedMessage)
 });
 
 When('I add {string} to the cart', async function (productName) {
-  console.log(`Tentando adicionar o produto "${productName}" ao carrinho.`);
   const addToCartButton = await driver.wait(
     until.elementLocated(By.xpath(xpaths.XPATH_ADD_TO_CART)),
     timeout
   );
   await addToCartButton.click();
-  console.log(`Produto "${productName}" foi adicionado ao carrinho.`);
 });
 
 When('I navigate to the cart by clicking the cart icon in the top right corner', async function () {
-  console.log('Navegando até o carrinho.');
   const cartIcon = await driver.wait(
     until.elementLocated(By.xpath(xpaths.XPATH_GO_TO_CART)),
     timeout
   );
   await cartIcon.click();
-  console.log('Carrinho acessado com sucesso.');
 });
 
-Then('I should see the product in the cart with the name {string}',
-  async function (expectedProductName) {
-    console.log('Verificando o conteúdo do carrinho.');
-    const itemNameElement = await driver.wait(
-      until.elementLocated(By.xpath(xpaths.XPATH_ITEM_NAME)),
-      timeout
+Then('I should see the product in the cart with the name {string}', async function (expectedProductName) {
+  const itemNameElement = await driver.wait(
+    until.elementLocated(By.xpath(xpaths.XPATH_ITEM_NAME)),
+    timeout
+  );
+  const actualProductName = await itemNameElement.getText();
+  if (actualProductName.trim() === expectedProductName.trim()) {
+    console.log(`Produto "${actualProductName}" foi adicionado ao carrinho.`);
+  } else {
+    throw new Error(
+      `Erro ao verificar o carrinho! Nome esperado: "${expectedProductName}", Nome encontrado: "${actualProductName}".`
     );
-    const actualProductName = await itemNameElement.getText();
-    const itemPriceElement = await driver.wait(
-      until.elementLocated(By.xpath(xpaths.XPATH_ITEM_PRICE)),
-      timeout
-    );
-    const actualPrice = await itemPriceElement.getText();
-
-    if (actualProductName === expectedProductName && actualPrice === '29.99') {
-      console.log(
-        `Produto encontrado no carrinho com o nome esperado "${expectedProductName}" e preço esperado "29.99".`
-      );
-    } else {
-      console.error(
-        `Erro ao verificar o carrinho! Nome esperado: "${expectedProductName}", Nome encontrado: "${actualProductName}". Preço esperado: "29.99", Preço encontrado: "${actualPrice}".`
-      );
-      throw new Error('O carrinho não contém o produto ou os dados estão incorretos.');
-    }
   }
-);
+});

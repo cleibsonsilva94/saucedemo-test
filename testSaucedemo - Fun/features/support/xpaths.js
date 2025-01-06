@@ -9,7 +9,7 @@ module.exports = {
   XPATH_ERROR_MESSAGE: "//div[@class='error-message-container error']",
   XPATH_GO_TO_CART: "//div[contains(@id, 'cart')]",
   XPATH_ADD_TO_CART: "//button[contains(@id, 'add-to-cart')]",
-  XPATH_ITEM_NAME: "//div[@data-test='inventory-item-desc']",
+  XPATH_ITEM_NAME: "//div[@class='inventory_item_name']",
   XPATH_ITEM_PRICE: "//div[contains(@class, 'inventory_item_price')]"
 
 };

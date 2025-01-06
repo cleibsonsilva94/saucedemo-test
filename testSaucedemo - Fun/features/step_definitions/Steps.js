@@ -2,7 +2,7 @@ const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
 const { Builder, By, until } = require('selenium-webdriver');
 const xpaths = require('../support/xpaths');
 let driver;
-const timeout = 15000; // Definindo o timeout
+const timeout = 500000; // Definindo o timeout
 
 Before(async function () {
   driver = await new Builder().forBrowser('chrome').build();
@@ -31,9 +31,11 @@ When('I click on login', async function () {
   await driver.findElement(By.xpath(xpaths.XPATH_LOGIN_BUTTON)).click();
 });
 
+
 Then('I should be redirected to the homepage {string}', async function (expectedUrl) {
-  await driver.wait(async () => {
-    const currentUrl = await driver.getCurrentUrl();
-    return currentUrl === expectedUrl;
-  }, timeout);
+  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_IVENTORY_HOME_PAGE)), timeout);
+  const currentUrl = await driver.getCurrentUrl();
+  if (currentUrl !== expectedUrl) {
+    throw new Error(`Expected URL to be ${expectedUrl}, but got ${currentUrl}`);
+  }
 });

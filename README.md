@@ -65,5 +65,5 @@ Os casos de teste podem ser encontrados aqui:
 
 ## Abordagem Seguida para este Desafio
 
-No documento a seguir, são descritos os bugs encontrados, as ferramentas utilizadas e os resultados obtidos:  
+No documento a seguir, são descritos o bug encontrado, as ferramentas utilizadas, os resultados obtidos e uma sugestão:
 [Relatório](https://docs.google.com/document/d/11R9qDWBp_lyDS1bh19GtsgswVnnlUOwHzTv4sRuNTAw/edit?usp=drive_link)

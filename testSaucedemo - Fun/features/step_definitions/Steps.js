@@ -2,7 +2,7 @@ const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
 const { Builder, By, until } = require('selenium-webdriver');
 const xpaths = require('../support/xpaths');
 let driver;
-const timeout = 500000; // Definindo o timeout
+const timeout = 15000;
 
 Before(async function () {
   driver = await new Builder().forBrowser('chrome').build();

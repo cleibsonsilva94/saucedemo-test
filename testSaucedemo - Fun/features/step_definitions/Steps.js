@@ -31,12 +31,11 @@ When('I click on login', async function () {
   await driver.findElement(By.xpath(xpaths.XPATH_LOGIN_BUTTON)).click();
 });
 
-
 Then('I should be redirected to the homepage {string}', async function (expectedUrl) {
   try {
     await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_IVENTORY_HOME_PAGE)), timeout);
     const currentUrl = await driver.getCurrentUrl();
-    console.log(`Current URL: ${currentUrl}`)
+    console.log(`Current URL: ${currentUrl}`);
     if (currentUrl !== expectedUrl) {
       throw new Error(`Expected URL to be ${expectedUrl}, but got ${currentUrl}`);
     }
@@ -59,10 +58,57 @@ Then('I should see the error message {string}', async function (expectedMessage)
   const errorElement = await driver.wait(
     until.elementLocated(By.xpath(xpaths.XPATH_ERROR_MESSAGE)),
     timeout
-);
+  );
   const actualMessage = await errorElement.getText();
   if (actualMessage !== expectedMessage) {
     throw new Error(`Expected error message to be "${expectedMessage}", but got "${actualMessage}"`);
   }
   console.log(`Error message displayed as expected: "${actualMessage}"`);
 });
+
+When('I add {string} to the cart', async function (productName) {
+  console.log(`Tentando adicionar o produto "${productName}" ao carrinho.`);
+  const addToCartButton = await driver.wait(
+    until.elementLocated(By.xpath(xpaths.XPATH_ADD_TO_CART)),
+    timeout
+  );
+  await addToCartButton.click();
+  console.log(`Produto "${productName}" foi adicionado ao carrinho.`);
+});
+
+When('I navigate to the cart by clicking the cart icon in the top right corner', async function () {
+  console.log('Navegando até o carrinho.');
+  const cartIcon = await driver.wait(
+    until.elementLocated(By.xpath(xpaths.XPATH_GO_TO_CART)),
+    timeout
+  );
+  await cartIcon.click();
+  console.log('Carrinho acessado com sucesso.');
+});
+
+Then('I should see the product in the cart with the name {string}',
+  async function (expectedProductName) {
+    console.log('Verificando o conteúdo do carrinho.');
+    const itemNameElement = await driver.wait(
+      until.elementLocated(By.xpath(xpaths.XPATH_ITEM_NAME)),
+      timeout
+    );
+    const actualProductName = await itemNameElement.getText();
+    const itemPriceElement = await driver.wait(
+      until.elementLocated(By.xpath(xpaths.XPATH_ITEM_PRICE)),
+      timeout
+    );
+    const actualPrice = await itemPriceElement.getText();
+
+    if (actualProductName === expectedProductName && actualPrice === '29.99') {
+      console.log(
+        `Produto encontrado no carrinho com o nome esperado "${expectedProductName}" e preço esperado "29.99".`
+      );
+    } else {
+      console.error(
+        `Erro ao verificar o carrinho! Nome esperado: "${expectedProductName}", Nome encontrado: "${actualProductName}". Preço esperado: "29.99", Preço encontrado: "${actualPrice}".`
+      );
+      throw new Error('O carrinho não contém o produto ou os dados estão incorretos.');
+    }
+  }
+);

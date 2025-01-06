@@ -13,9 +13,12 @@ Para instalar, você terá que clonar este repositório para seu espaço de trab
 - **Selenium**
 - **JavaScript**
 - **Node.js**
-- **Cucumber** (metodologia usada nos testes)
+- **Cucumber** (Metodologia usada nos testes) 
 
-Para um tutorial de como instalar o Selenium, clique no link: [Configuring the Environment](https://github.com/cleibsonsilva94/Test.js/blob/main/SimpleTests/ConfiguringtheEnvironment.md)
+ ```bash
+   npm install @cucumber/cucumber --save-dev
+   ```
+Para um tutorial de como instalar o Selenium bem como o Node.js, clique no link: [Configuring the Environment](https://github.com/cleibsonsilva94/Test.js/blob/main/SimpleTests/ConfiguringtheEnvironment.md)
 
 ## Classes
 

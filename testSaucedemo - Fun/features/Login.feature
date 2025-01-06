@@ -25,14 +25,14 @@ Feature: Login
     @emptyUsername
     Scenario: AttemptingToLogInWithoutEnteringAUsername
         Given I am on the Swag Labs login page
-        And I leave the Username field empty
-        When I click on the Password field and type "secret_sauce"
-        Then I should see the error message "Username is required"
+        And I click on the Password field and type "secret_sauce"
+        When I click on login
+        Then I should see the error message "Epic sadface: Username is required"
     
     #Test Number:CT004
     @emptyPassword
     Scenario: AttemptingToLogInWithoutEnteringAPassword
         Given I am on the Swag Labs login page
         And I click on the Username field and type "standard_user"
-        When I leave the Password field empty
-        Then I should see the error message "Password is required"
+        When I click on login
+        Then I should see the error message "Epic sadface: Password is required"

@@ -10,7 +10,7 @@ Escolhi para automatizar os testes o site: ([https://www.saucedemo.com/](https:/
 
 Para instalar, você terá que clonar este repositório para seu espaço de trabalho e ter pré-instalado em sua máquina os seguintes componentes:
 
--**ChromeDriver**
+- **ChromeDriver**
 - **Selenium**
 - **JavaScript**
 - **Node.js**

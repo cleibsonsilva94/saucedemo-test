@@ -82,17 +82,27 @@ When('I navigate to the cart by clicking the cart icon in the top right corner',
   await cartIcon.click();
 });
 
-Then('I should see the product in the cart with the name {string}', async function (expectedProductName) {
+Then('I should see the product in the cart with the name {string} and price {string}', async function (expectedProductName, expectedPrice) {
   const itemNameElement = await driver.wait(
     until.elementLocated(By.xpath(xpaths.XPATH_ITEM_NAME)),
     timeout
   );
   const actualProductName = await itemNameElement.getText();
-  if (actualProductName.trim() === expectedProductName.trim()) {
-    console.log(`Produto "${actualProductName}" foi adicionado ao carrinho.`);
-  } else {
+  const itemPriceElement = await driver.wait(
+    until.elementLocated(By.xpath(xpaths.XPATH_ITEM_PRICE)),
+    timeout
+  );
+  const actualPrice = await itemPriceElement.getText();
+  
+  if (actualProductName.trim() !== expectedProductName.trim()) {
     throw new Error(
-      `Erro ao verificar o carrinho! Nome esperado: "${expectedProductName}", Nome encontrado: "${actualProductName}".`
+      `Cart verification failed! Expected product name: "${expectedProductName}", Found: "${actualProductName}".`
     );
   }
+  if (actualPrice.trim() !== expectedPrice.trim()) {
+    throw new Error(
+      `Cart verification failed! Expected price: "${expectedPrice}", Found: "${actualPrice}".`
+    );
+  }
+  console.log(`Product "${actualProductName}" with price "${actualPrice}" found in the cart successfully.`);
 });

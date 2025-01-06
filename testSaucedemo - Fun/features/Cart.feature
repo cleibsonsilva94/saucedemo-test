@@ -13,7 +13,7 @@ Feature: Cart
         Then I should be redirected to the homepage "https://www.saucedemo.com/inventory.html"
         And I add "Sauce Labs Backpack" to the cart
         And I navigate to the cart by clicking the cart icon in the top right corner
-        Then I should see the product in the cart with the name "Sauce Labs Backpack"
+        Then I should see the product in the cart with the name "Sauce Labs Backpack" and price "$29.99"
 
     @removeProduct
     #Test Number: CT006

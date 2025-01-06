@@ -93,7 +93,7 @@ Then('I should see the product in the cart with the name {string} and price {str
     timeout
   );
   const actualPrice = await itemPriceElement.getText();
-  
+
   if (actualProductName.trim() !== expectedProductName.trim()) {
     throw new Error(
       `Cart verification failed! Expected product name: "${expectedProductName}", Found: "${actualProductName}".`
@@ -109,7 +109,9 @@ Then('I should see the product in the cart with the name {string} and price {str
 
 When('I click on "Remove"', async function () {
   await driver.wait(
-    until.elementLocated(By.xpath(xpaths.XPATH_REMOVE_BUTTON)),timeout);
+    until.elementLocated(By.xpath(xpaths.XPATH_REMOVE_BUTTON)),
+    timeout
+  );
   await driver.findElement(By.xpath(xpaths.XPATH_REMOVE_BUTTON)).click();
 });
 

@@ -10,12 +10,13 @@ Escolhi para automatizar os testes o site: ([https://www.saucedemo.com/](https:/
 
 Para instalar, você terá que clonar este repositório para seu espaço de trabalho e ter pré-instalado em sua máquina os seguintes componentes:
 
+- **ChromeDriver**
 - **Selenium**
 - **JavaScript**
 - **Node.js**
-- **Cucumber** (metodologia usada nos testes)
+- **Cucumber** (Metodologia usada nos testes) 
 
-Para um tutorial de como instalar o Selenium, clique no link: [Configuring the Environment](https://github.com/cleibsonsilva94/Test.js/blob/main/SimpleTests/ConfiguringtheEnvironment.md)
+Para um tutorial sobre como instalar o Selenium, Node.js, ChromeDriver, e Cucumber, clique no link: [Configuring the Environment](https://github.com/cleibsonsilva94/Test.js/blob/main/SimpleTests/ConfiguringtheEnvironment.md)
 
 ## Classes
 
@@ -27,6 +28,9 @@ Para um tutorial de como instalar o Selenium, clique no link: [Configuring the E
 
 - **Steps.js**: `testSaucedemo - Fun\features\step_definitions\Steps.js`  
   Arquivo onde estão os métodos/funções utilizados nos testes.
+
+- **xpaths.js**: `testSaucedemo - Fun\features\support\xpaths.js`  
+  Arquivo onde estão os xpaths usados.
 
 ---
 

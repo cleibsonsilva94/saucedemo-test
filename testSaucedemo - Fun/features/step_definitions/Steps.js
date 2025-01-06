@@ -106,3 +106,17 @@ Then('I should see the product in the cart with the name {string} and price {str
   }
   console.log(`Product "${actualProductName}" with price "${actualPrice}" found in the cart successfully.`);
 });
+
+When('I click on "Remove"', async function () {
+  await driver.wait(
+    until.elementLocated(By.xpath(xpaths.XPATH_REMOVE_BUTTON)),timeout);
+  await driver.findElement(By.xpath(xpaths.XPATH_REMOVE_BUTTON)).click();
+});
+
+Then('the product {string} should be removed from the cart immediately', async function (productName) {
+  const productInCart = await driver.findElements(By.xpath(`//div[contains(text(), '${productName}')]`));
+  if (productInCart.length > 0) {
+    throw new Error(`Product "${productName}" was not removed from the cart.`);
+  }
+  console.log(`Product "${productName}" has been successfully removed from the cart.`);
+});

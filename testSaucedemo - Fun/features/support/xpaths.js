@@ -10,5 +10,6 @@ module.exports = {
   XPATH_GO_TO_CART: "//div[contains(@id, 'cart')]",
   XPATH_ADD_TO_CART: "//button[contains(@id, 'add-to-cart')]",
   XPATH_ITEM_NAME: "//div[@class='inventory_item_name']",
-  XPATH_ITEM_PRICE: "//div[contains(@class, 'inventory_item_price')]"
+  XPATH_ITEM_PRICE: "//div[contains(@class, 'inventory_item_price')]",
+  XPATH_REMOVE_BUTTON: "//button[contains(@id, 'remove')]"
 };

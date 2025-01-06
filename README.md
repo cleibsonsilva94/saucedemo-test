@@ -52,6 +52,8 @@ Para um tutorial sobre como instalar o Selenium, Node.js, ChromeDriver, e Cucumb
   - [https://www.saucedemo.com/inventory.html](https://www.saucedemo.com/inventory.html)  
   - [https://www.saucedemo.com/cart.html](https://www.saucedemo.com/cart.html)
 
+Fiz um vídeo com a execução de algum deles: [Vídeo](https://drive.google.com/file/d/1PuzsLOTloSdSb1WmcZnJfjbn1WDlzdtn/view?usp=drive_link)
+
 ---
 
 ## Casos de Teste

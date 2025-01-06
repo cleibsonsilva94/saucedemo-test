@@ -28,6 +28,9 @@ Para um tutorial de como instalar o Selenium, clique no link: [Configuring the E
 - **Steps.js**: `testSaucedemo - Fun\features\step_definitions\Steps.js`  
   Arquivo onde estão os métodos/funções utilizados nos testes.
 
+- **xpaths.js**: `testSaucedemo - Fun\features\support\xpaths.js`  
+  Arquivo onde estão os xpaths usados.
+
 ---
 
 ## Páginas Automatizadas

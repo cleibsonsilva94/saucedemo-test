@@ -23,7 +23,7 @@ Feature: Login
 
     @emptyUsername
     # Test Number: CT003
-    Scenario: AttemptingToLogInWithoutEnteringAUsername
+    Scenario: attemptingToLogInWithoutEnteringAUsername
         Given I am on the Swag Labs login page
         And I click on the Password field and type "secret_sauce"
         When I click on login
@@ -31,7 +31,7 @@ Feature: Login
 
     @emptyPassword
     # Test Number: CT004
-    Scenario: AttemptingToLogInWithoutEnteringAPassword
+    Scenario: attemptingToLogInWithoutEnteringAPassword
         Given I am on the Swag Labs login page
         And I click on the Username field and type "standard_user"
         When I click on login

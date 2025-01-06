@@ -33,9 +33,36 @@ When('I click on login', async function () {
 
 
 Then('I should be redirected to the homepage {string}', async function (expectedUrl) {
-  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_IVENTORY_HOME_PAGE)), timeout);
-  const currentUrl = await driver.getCurrentUrl();
-  if (currentUrl !== expectedUrl) {
-    throw new Error(`Expected URL to be ${expectedUrl}, but got ${currentUrl}`);
+  try {
+    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_IVENTORY_HOME_PAGE)), timeout);
+    const currentUrl = await driver.getCurrentUrl();
+    console.log(`Current URL: ${currentUrl}`)
+    if (currentUrl !== expectedUrl) {
+      throw new Error(`Expected URL to be ${expectedUrl}, but got ${currentUrl}`);
+    }
+    console.log(`Successfully redirected to the homepage: ${currentUrl}`);
+  } catch (error) {
+    console.log(`Error: Element with XPath '${xpaths.XPATH_IVENTORY_HOME_PAGE}' not found`);
+    throw error;
   }
+});
+
+Then('I should see the error message {string}', async function (expectedMessage) {
+  const currentUrl = await driver.getCurrentUrl();
+  const homepageUrl = 'https://www.saucedemo.com/inventory';
+
+  if (currentUrl === homepageUrl) {
+    throw new Error('The user was redirected to the homepage with invalid credentials.');
+  }
+
+  console.log('The user was not redirected to the homepage.');
+  const errorElement = await driver.wait(
+    until.elementLocated(By.xpath(xpaths.XPATH_ERROR_MESSAGE)),
+    timeout
+);
+  const actualMessage = await errorElement.getText();
+  if (actualMessage !== expectedMessage) {
+    throw new Error(`Expected error message to be "${expectedMessage}", but got "${actualMessage}"`);
+  }
+  console.log(`Error message displayed as expected: "${actualMessage}"`);
 });

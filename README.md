@@ -1,29 +1,63 @@
 # Desafio Minitok - Cleibson Silva
 
+## Automação
+
+Escolhi para automatizar os testes o site: ([https://www.saucedemo.com/](https://www.saucedemo.com/)) que simula um e-commerce e é mais estável do que um site em produção.
+
+---
+
 ## Instalação
 
-(Incluir as instruções para instalação aqui)
+Para instalar, você terá que clonar este repositório para seu espaço de trabalho e ter pré-instalado em sua máquina os seguintes componentes:
 
-## Execução
+- **Selenium**
+- **JavaScript**
+- **Node.js**
+- **Cucumber** (metodologia usada nos testes)
 
-(Incluir as instruções para execução aqui)
+Para um tutorial de como instalar o Selenium, clique no link: [Configuring the Environment](https://github.com/cleibsonsilva94/Test.js/blob/main/SimpleTests/ConfiguringtheEnvironment.md)
 
 ## Classes
 
-(Incluir a descrição das classes aqui)
+- **cart.feature**: `testSaucedemo - Fun\features\cart.feature`  
+  Relacionada aos testes de carrinho executados em: [https://www.saucedemo.com/cart.html](https://www.saucedemo.com/cart.html)
 
-## Pages
+- **login.feature**: `testSaucedemo - Fun\features\login.feature`  
+  Relacionada aos testes de login executados na página: [https://www.saucedemo.com/](https://www.saucedemo.com/)
 
-(Incluir a descrição das páginas aqui)
+- **Steps.js**: `testSaucedemo - Fun\features\step_definitions\Steps.js`  
+  Arquivo onde estão os métodos/funções utilizados nos testes.
 
-## Tests
+---
 
-(Incluir a descrição dos testes aqui)
+## Páginas Automatizadas
 
-## Test Cases
+- [https://www.saucedemo.com/](https://www.saucedemo.com/)
+- [https://www.saucedemo.com/inventory.html](https://www.saucedemo.com/inventory.html)
+- [https://www.saucedemo.com/cart.html](https://www.saucedemo.com/cart.html)
 
-* Os casos de teste podem ser encontrados aqui: [Planilha de Casos de Teste](https://docs.google.com/spreadsheets/d/1focNywOuat5Ur9Fx5mTRSOoNEWUPgJA1rcnumEXvnkM/edit?gid=0#gid=0)
+---
 
-## Abordagem seguida para esse desafio
+## Testes
 
-* No documento a seguir, descrevo alguns bugs que foram encontrados, as ferramentas utilizadas e os resultados obtidos [Relatório](https://docs.google.com/document/d/11R9qDWBp_lyDS1bh19GtsgswVnnlUOwHzTv4sRuNTAw/edit?usp=drive_link)
+- **cart.feature**: `testSaucedemo - Fun\features\cart.feature`  
+  Relacionado à página de carrinho: [https://www.saucedemo.com/cart.html](https://www.saucedemo.com/cart.html)
+
+- **login.feature**: `testSaucedemo - Fun\features\login.feature`  
+  Relacionado às páginas:  
+  - [https://www.saucedemo.com/inventory.html](https://www.saucedemo.com/inventory.html)  
+  - [https://www.saucedemo.com/cart.html](https://www.saucedemo.com/cart.html)
+
+---
+
+## Casos de Teste
+
+Os casos de teste podem ser encontrados aqui:  
+[Planilha de Casos de Teste](https://docs.google.com/spreadsheets/d/1focNywOuat5Ur9Fx5mTRSOoNEWUPgJA1rcnumEXvnkM/edit?gid=0#gid=0)
+
+---
+
+## Abordagem Seguida para este Desafio
+
+No documento a seguir, são descritos os bugs encontrados, as ferramentas utilizadas e os resultados obtidos:  
+[Relatório](https://docs.google.com/document/d/11R9qDWBp_lyDS1bh19GtsgswVnnlUOwHzTv4sRuNTAw/edit?usp=drive_link)

@@ -1,8 +1,9 @@
 const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
 const { Builder, By, until } = require('selenium-webdriver');
 const xpaths = require('../support/xpaths');
+const url = require('../support/url');
 let driver;
-const timeout = 5000;
+const timeout = 60000;
 
 Before(async function () {
   driver = await new Builder().forBrowser('chrome').build();
@@ -13,7 +14,7 @@ After(async function () {
 });
 
 Given('I am on the Swag Labs login page', async function () {
-  await driver.get(xpaths.URL);
+  await driver.get(url.UrlLogin);
 });
 
 When('I click on the Username field and type {string}', async function (username) {

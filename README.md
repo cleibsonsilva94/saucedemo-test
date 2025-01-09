@@ -4,6 +4,10 @@
 
 Escolhi para automatizar os testes o site: ([https://www.saucedemo.com/](https://www.saucedemo.com/)) que simula um e-commerce e é mais estável do que um site em produção.
 
+## Comandos para rodar testes
+
+`npx cucumber-js --tags @feature` (para rodar todos os testes de uma feature, ex.: `npx cucumber-js --tags "@cart"`) ou `npx cucumber-js --tags @TestName` (para rodar um teste específico, ex.: `npx cucumber-js --tags "@invalidLogin"`).
+
 ---
 
 ## Instalação
@@ -21,16 +25,16 @@ https://github.com/cleibsonsilva94/Test.js/blob/main/SimpleTests/ConfiguringtheE
 
 ## Classes
 
-- **cart.feature**: `testSaucedemo - Fun\features\cart.feature`  
+- **cart.feature**: `testSaucedemo - Fun/features/cart.feature`  
   Relacionada aos testes de carrinho executados em: [https://www.saucedemo.com/cart.html](https://www.saucedemo.com/cart.html)
 
-- **login.feature**: `testSaucedemo - Fun\features\login.feature`  
+- **login.feature**: `testSaucedemo - Fun/features/login.feature`  
   Relacionada aos testes de login executados na página: [https://www.saucedemo.com/](https://www.saucedemo.com/)
 
-- **Steps.js**: `testSaucedemo - Fun\features\step_definitions\Steps.js`  
+- **Steps.js**: `testSaucedemo - Fun/features/step_definitions/Steps.js`  
   Arquivo onde estão os métodos/funções utilizados nos testes.
 
-- **xpaths.js**: `testSaucedemo - Fun\features\support\xpaths.js`  
+- **xpaths.js**: `testSaucedemo - Fun/features/support/xpaths.js`  
   Arquivo onde estão os xpaths usados.
 
 ---
@@ -45,10 +49,10 @@ https://github.com/cleibsonsilva94/Test.js/blob/main/SimpleTests/ConfiguringtheE
 
 ## Testes
 
-- **cart.feature**: `testSaucedemo - Fun\features\cart.feature`  
+- **cart.feature**: `testSaucedemo - Fun/features/cart.feature`  
   Relacionado à página de carrinho: [https://www.saucedemo.com/cart.html](https://www.saucedemo.com/cart.html)
 
-- **login.feature**: `testSaucedemo - Fun\features\login.feature`  
+- **login.feature**: `testSaucedemo - Fun/features/login.feature`  
   Relacionado às páginas:  
   - [https://www.saucedemo.com/inventory.html](https://www.saucedemo.com/inventory.html)  
   - [https://www.saucedemo.com/cart.html](https://www.saucedemo.com/cart.html)

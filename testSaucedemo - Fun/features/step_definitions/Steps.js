@@ -13,6 +13,8 @@ After(async function () {
   await driver.quit();
 });
 
+// ======================== LOGIN PAGE FUNCTIONS ========================= \\
+
 Given('I am on the Swag Labs login page', async function () {
   await driver.get(url.UrlLogin);
 });
@@ -67,6 +69,8 @@ Then('I should see the error message {string}', async function (expectedMessage)
   console.log(`Error message displayed as expected: "${actualMessage}"`);
 });
 
+// ========================== HOME PAGE FUNCTIONS ============================ \\
+
 When('I add {string} to the cart', async function (productName) {
   const addToCartButton = await driver.wait(
     until.elementLocated(By.xpath(xpaths.XPATH_ADD_TO_CART)),
@@ -82,6 +86,8 @@ When('I navigate to the cart by clicking the cart icon in the top right corner',
   );
   await cartIcon.click();
 });
+
+// ======================== CART PAGE FUNCTIONS ========================= \\
 
 Then('I should see the product in the cart with the name {string} and price {string}', async function (expectedProductName, expectedPrice) {
   const itemNameElement = await driver.wait(

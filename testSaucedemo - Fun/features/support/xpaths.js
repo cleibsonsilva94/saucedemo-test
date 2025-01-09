@@ -3,10 +3,10 @@
 module.exports = {
   // ======================== LOGIN PAGE XPATHS ========================= \\
 
-  XPATH_FOR_USERNAME_FIELD: "//input[@id='user-name']", // USERNAME FIELD
-  XPATH_FOR_PASSWORD_FIELD: "//input[@id='password']",   // PASSWORD FIELD
-  XPATH_LOGIN_BUTTON: "//*[@id='login-button']",         // LOGIN BUTTON
-  XPATH_ERROR_MESSAGE: "//div[@class='error-message-container error']", // ERROR MESSAGE CONTAINER
+  XPATH_FOR_USERNAME_FIELD: "//input[@id='user-name']",
+  XPATH_FOR_PASSWORD_FIELD: "//input[@id='password']", 
+  XPATH_LOGIN_BUTTON: "//*[@id='login-button']", 
+  XPATH_ERROR_MESSAGE: "//div[@class='error-message-container error']",
 
   // ======================== HOME PAGE XPATHS ========================== \\
 

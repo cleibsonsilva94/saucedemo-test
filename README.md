@@ -55,8 +55,8 @@ Antes de rodar os testes, certifique-se de que os seguintes componentes estão i
 - **xpaths.js**: `testSaucedemo - Fun/features/support/xpaths.js`  
   Arquivo onde estão os xpaths usados.
 
-- **url.js**: `testSaucedemo - Fun/features\support\url.js` 
-  Arquivos onde estão as URLs utilizadas.  
+- **url.js**: `testSaucedemo - Fun/features/support/url.js`  
+  Arquivo onde estão as URLs utilizadas.  
 
 ---
 

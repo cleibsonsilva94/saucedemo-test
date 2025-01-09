@@ -18,5 +18,5 @@ module.exports = {
 
   // ========================= CART PAGE XPATHS ========================= \\
 
-  XPATH_REMOVE_BUTTON: "//button[contains(@id, 'remove')]"          // REMOVE ITEM BUTTON
+  XPATH_REMOVE_BUTTON: "//button[contains(@id, 'remove')]"
 };

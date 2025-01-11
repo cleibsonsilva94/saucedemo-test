@@ -1,23 +1,23 @@
 // ======================== CART PAGE FUNCTIONS ========================= \\
-const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
+
+const { When, Then } = require('@cucumber/cucumber');
 const { By, until } = require('selenium-webdriver');
 const { getDriver } = require('../support/driver');
-const xpaths = require('../support/xpathsLoginPage');
-const xpaths = require('../support/xpathsHomePage');
-const xpaths = require('../support/xpathsCartPage');
-const url = require('../support/url');
+const xpathsCartPage = require('../support/xpathsCartPage'); 
+const xpathsCartPage = require('../support/xpathsHomePage');
+const xpathsCartPage = require('../support/xpathsLoginPage');
 
 const timeout = 80000;
 
 Then('I should see the product in the cart with the name {string} and price {string}', async function (expectedProductName, expectedPrice) {
   const driver = await getDriver();
   const itemNameElement = await driver.wait(
-    until.elementLocated(By.xpath(xpaths.XPATH_ITEM_NAME)),
+    until.elementLocated(By.xpath(xpathsCartPage.XPATH_ITEM_NAME)),
     timeout
   );
   const actualProductName = await itemNameElement.getText();
   const itemPriceElement = await driver.wait(
-    until.elementLocated(By.xpath(xpaths.XPATH_ITEM_PRICE)),
+    until.elementLocated(By.xpath(xpathsCartPage.XPATH_ITEM_PRICE)),
     timeout
   );
   const actualPrice = await itemPriceElement.getText();
@@ -34,10 +34,10 @@ Then('I should see the product in the cart with the name {string} and price {str
 When('I click on "Remove"', async function () {
   const driver = await getDriver();
   await driver.wait(
-    until.elementLocated(By.xpath(xpaths.XPATH_REMOVE_BUTTON)),
+    until.elementLocated(By.xpath(xpathsCartPage.XPATH_REMOVE_BUTTON)),
     timeout
   );
-  await driver.findElement(By.xpath(xpaths.XPATH_REMOVE_BUTTON)).click();
+  await driver.findElement(By.xpath(xpathsCartPage.XPATH_REMOVE_BUTTON)).click();
 });
 
 Then('the product {string} should be removed from the cart immediately', async function (productName) {

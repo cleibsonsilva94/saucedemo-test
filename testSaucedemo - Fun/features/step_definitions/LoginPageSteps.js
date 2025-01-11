@@ -1,12 +1,10 @@
 // ======================== LOGIN PAGE FUNCTIONS ========================= \\
+
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { By, until } = require('selenium-webdriver');
 const { getDriver } = require('../support/driver');
-const xpaths = require('../support/xpathsLoginPage');
-const xpaths = require('../support/xpathsHomePage');
-const xpaths = require('../support/xpathsCartPage');
+const xpathsLoginPage = require('../support/xpathsLoginPage');
 const url = require('../support/url');
-
 const timeout = 80000;
 
 Given('I am on the Swag Labs login page', async function () {
@@ -16,26 +14,26 @@ Given('I am on the Swag Labs login page', async function () {
 
 When('I click on the Username field and type {string}', async function (username) {
   const driver = await getDriver();
-  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_FOR_USERNAME_FIELD)), timeout);
-  await driver.findElement(By.xpath(xpaths.XPATH_FOR_USERNAME_FIELD)).sendKeys(username);
+  await driver.wait(until.elementLocated(By.xpath(xpathsLoginPage.XPATH_FOR_USERNAME_FIELD)), timeout);
+  await driver.findElement(By.xpath(xpathsLoginPage.XPATH_FOR_USERNAME_FIELD)).sendKeys(username);
 });
 
 When('I click on the Password field and type {string}', async function (password) {
   const driver = await getDriver();
-  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_FOR_PASSWORD_FIELD)), timeout);
-  await driver.findElement(By.xpath(xpaths.XPATH_FOR_PASSWORD_FIELD)).sendKeys(password);
+  await driver.wait(until.elementLocated(By.xpath(xpathsLoginPage.XPATH_FOR_PASSWORD_FIELD)), timeout);
+  await driver.findElement(By.xpath(xpathsLoginPage.XPATH_FOR_PASSWORD_FIELD)).sendKeys(password);
 });
 
 When('I click on login', async function () {
   const driver = await getDriver();
-  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_LOGIN_BUTTON)), timeout);
-  await driver.findElement(By.xpath(xpaths.XPATH_LOGIN_BUTTON)).click();
+  await driver.wait(until.elementLocated(By.xpath(xpathsLoginPage.XPATH_LOGIN_BUTTON)), timeout);
+  await driver.findElement(By.xpath(xpathsLoginPage.XPATH_LOGIN_BUTTON)).click();
 });
 
 Then('I should be redirected to the homepage {string}', async function (expectedUrl) {
   const driver = await getDriver();
   try {
-    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_IVENTORY_HOME_PAGE)), timeout);
+    await driver.wait(until.elementLocated(By.xpath(xpathsLoginPage.XPATH_IVENTORY_HOME_PAGE)), timeout);
     const currentUrl = await driver.getCurrentUrl();
     console.log(`Current URL: ${currentUrl}`);
     if (currentUrl !== expectedUrl) {
@@ -43,7 +41,7 @@ Then('I should be redirected to the homepage {string}', async function (expected
     }
     console.log(`Successfully redirected to the homepage: ${currentUrl}`);
   } catch (error) {
-    console.log(`Error: Element with XPath '${xpaths.XPATH_IVENTORY_HOME_PAGE}' not found`);
+    console.log(`Error: Element with XPath '${xpathsLoginPage.XPATH_IVENTORY_HOME_PAGE}' not found`);
     throw error;
   }
 });
@@ -59,7 +57,7 @@ Then('I should see the error message {string}', async function (expectedMessage)
 
   console.log('The user was not redirected to the homepage.');
   const errorElement = await driver.wait(
-    until.elementLocated(By.xpath(xpaths.XPATH_ERROR_MESSAGE)),
+    until.elementLocated(By.xpath(xpathsLoginPage.XPATH_ERROR_MESSAGE)),
     timeout
   );
   const actualMessage = await errorElement.getText();

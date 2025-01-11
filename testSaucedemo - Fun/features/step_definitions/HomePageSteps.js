@@ -2,7 +2,9 @@
 const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
 const { By, until } = require('selenium-webdriver');
 const { getDriver } = require('../support/driver');
-const xpaths = require('../support/xpaths');
+const xpaths = require('../support/xpathsLoginPage');
+const xpaths = require('../support/xpathsHomePage');
+const xpaths = require('../support/xpathsCartPage');
 
 const timeout = 80000;
 

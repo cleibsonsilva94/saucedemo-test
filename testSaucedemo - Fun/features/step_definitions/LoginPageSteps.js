@@ -1,4 +1,4 @@
-// =================================== LOGIN PAGE FUNCTIONS ===================================== \\
+// ====================================== LOGIN PAGE FUNCTIONS ======================================== \\
 
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { By, until } = require('selenium-webdriver');

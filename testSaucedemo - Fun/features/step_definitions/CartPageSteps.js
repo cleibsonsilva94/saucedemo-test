@@ -1,21 +1,22 @@
-// ===================================== CART PAGE FUNCTIONS =====================================\\
+// ============================================ CART PAGE FUNCTIONS ===============================================\\
 
 const { When, Then } = require('@cucumber/cucumber');
 const { By, until } = require('selenium-webdriver');
 const { getDriver } = require('../support/driver');
 const xpathsCartPage = require('../support/xpathsCartPage'); 
+const xpathsHomePage = require('../support/xpathsHomePage');
 
 const timeout = 80000;
 
 Then('I should see the product in the cart with the name {string} and price {string}', async function (expectedProductName, expectedPrice) {
   const driver = await getDriver();
   const itemNameElement = await driver.wait(
-    until.elementLocated(By.xpath(xpathsCartPage.XPATH_ITEM_NAME)),
+    until.elementLocated(By.xpath(xpathsHomePage.XPATH_ITEM_NAME)),
     timeout
   );
   const actualProductName = await itemNameElement.getText();
   const itemPriceElement = await driver.wait(
-    until.elementLocated(By.xpath(xpathsCartPage.XPATH_ITEM_PRICE)),
+    until.elementLocated(By.xpath(xpathsHomePage.XPATH_ITEM_PRICE)),
     timeout
   );
   const actualPrice = await itemPriceElement.getText();

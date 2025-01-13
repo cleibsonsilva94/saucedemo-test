@@ -48,9 +48,8 @@ Then('I should be redirected to the homepage {string}', async function (expected
 Then('I should see the error message {string}', async function (expectedMessage) {
   const driver = await getDriver();
   const currentUrl = await driver.getCurrentUrl();
-  const homepageUrl = 'https://www.saucedemo.com/inventory';
-
-  if (currentUrl === homepageUrl) {
+  
+  if (currentUrl === url.UrlHome) {
     throw new Error('The user was redirected to the homepage with invalid credentials.');
   }
 

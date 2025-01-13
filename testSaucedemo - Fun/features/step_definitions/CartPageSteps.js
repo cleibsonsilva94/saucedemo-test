@@ -1,11 +1,9 @@
-// ======================== CART PAGE FUNCTIONS ========================= \\
+// ===================================== CART PAGE FUNCTIONS =====================================\\
 
 const { When, Then } = require('@cucumber/cucumber');
 const { By, until } = require('selenium-webdriver');
 const { getDriver } = require('../support/driver');
 const xpathsCartPage = require('../support/xpathsCartPage'); 
-const xpathsCartPage = require('../support/xpathsHomePage');
-const xpathsCartPage = require('../support/xpathsLoginPage');
 
 const timeout = 80000;
 

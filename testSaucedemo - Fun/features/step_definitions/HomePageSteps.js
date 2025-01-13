@@ -1,4 +1,4 @@
-// ========================== HOME PAGE FUNCTIONS ============================ \\
+// ====================================== HOME PAGE FUNCTIONS ======================================= \\
 const { When } = require('@cucumber/cucumber');
 const { By, until } = require('selenium-webdriver');
 const { getDriver } = require('../support/driver');

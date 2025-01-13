@@ -1,4 +1,4 @@
-// ======================== LOGIN PAGE FUNCTIONS ========================= \\
+// =================================== LOGIN PAGE FUNCTIONS ===================================== \\
 
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { By, until } = require('selenium-webdriver');
@@ -35,7 +35,6 @@ Then('I should be redirected to the homepage {string}', async function (expected
   try {
     await driver.wait(until.elementLocated(By.xpath(xpathsLoginPage.XPATH_IVENTORY_HOME_PAGE)), timeout);
     const currentUrl = await driver.getCurrentUrl();
-    console.log(`Current URL: ${currentUrl}`);
     if (currentUrl !== expectedUrl) {
       throw new Error(`Expected URL to be ${expectedUrl}, but got ${currentUrl}`);
     }

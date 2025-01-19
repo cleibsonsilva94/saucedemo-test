@@ -41,6 +41,8 @@ Antes de rodar os testes, certifique-se de que os seguintes componentes estão i
 
 ## Classes
 
+### Features
+
 - **Cart.feature**: `testSaucedemo - Fun/features/Cart.feature`  
   Relacionado aos testes de carrinho executados na página:  
   [https://www.saucedemo.com/cart.html](https://www.saucedemo.com/cart.html)

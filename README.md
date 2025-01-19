@@ -49,11 +49,29 @@ Antes de rodar os testes, certifique-se de que os seguintes componentes estão i
   Relacionada aos testes de login executados na página:  
   [https://www.saucedemo.com/](https://www.saucedemo.com/)
 
-- **Steps.js**: `testSaucedemo - Fun/features/step_definitions/Steps.js`  
-  Arquivo onde estão os métodos/funções utilizados nos testes.
+  - **driver.js**: `testSaucedemo - Fun/features/support/driver.js`  
+  Arquivo que gerencia o WebDriver.
 
-- **xpaths.js**: `testSaucedemo - Fun/features/support/xpaths.js`  
-  Arquivo onde estão os xpaths usados.
+  - **Steps.js**: `testSaucedemo - Fun/features/step_definitions/Steps.js`  
+  Arquivo com configurações globais.
+  
+- **LoginPageSteps.js**: `testSaucedemo - Fun/features/step_definitions/LoginPageSteps.js`  
+  Arquivo onde estão os métodos/funções utilizados na página de login.
+
+- **HomePageSteps.js**: `testSaucedemo - Fun/features/step_definitions/HomePageSteps.js`  
+  Arquivo onde estão os métodos/funções utilizados na página Home.
+
+- **CartPageSteps.js**: `testSaucedemo - Fun/features/step_definitions/CartPageSteps.js`  
+  Arquivo onde estão os métodos e funções utilizados na página de carrinho.
+
+ **xpathsLoginPage.js**: `testSaucedemo - Fun/features/support/xpathsLoginPage.js`  
+Arquivo onde estão os XPaths utilizados na página de login.
+
+ **xpathsHomePage.js**: `testSaucedemo - Fun/features/support/xpathsHomePage.js`  
+Arquivo onde estão os XPaths utilizados na página Home.
+
+- **xpathsCartPage.js**: `testSaucedemo - Fun/features/support/xpathsCartPage.js`  
+Arquivo onde estão os XPaths utilizados na página de carrinho.
 
 - **url.js**: `testSaucedemo - Fun/features/support/url.js`  
   Arquivo onde estão as URLs utilizadas.  

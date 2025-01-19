@@ -41,41 +41,45 @@ Antes de rodar os testes, certifique-se de que os seguintes componentes estão i
 
 ## Classes
 
-- **cart.feature**: `testSaucedemo - Fun/features/cart.feature`  
-  Relacionada aos testes de carrinho executados em:  
+- **Cart.feature**: `testSaucedemo - Fun/features/Cart.feature`  
+  Relacionado aos testes de carrinho executados na página:  
   [https://www.saucedemo.com/cart.html](https://www.saucedemo.com/cart.html)
 
-- **login.feature**: `testSaucedemo - Fun/features/login.feature`  
-  Relacionada aos testes de login executados na página:  
+- **Login.feature**: `testSaucedemo - Fun/features/Login.feature`
+  Relacionado aos testes de login executados na página:  
   [https://www.saucedemo.com/](https://www.saucedemo.com/)
 
-  - **driver.js**: `testSaucedemo - Fun/features/support/driver.js`  
-  Arquivo que gerencia o WebDriver.
+### Arquivos de Suporte
 
-  - **Steps.js**: `testSaucedemo - Fun/features/step_definitions/Steps.js`  
-  Arquivo com configurações globais.
+- **driver.js**: `testSaucedemo - Fun/features/support/driver.js`  
+  Arquivo responsável por gerenciar o WebDriver.
+
+- **xpathsLoginPage.js**: `testSaucedemo - Fun/fatures/support/xpathsLoginPage.js`  
+  Arquivo que contém os XPaths utilizados na página de login.
+
+- **xpathsHomePage.js**: `testSaucedemo - Fun/fatures/support/xpathsHomePage.js`  
+  Arquivo que contém os XPaths utilizados na página Home.
+
+- **xpathsCartPage.js**: `testSaucedemo - Fun/fatures/support/xpathsCartPage.js`  
+  Arquivo que contém os XPaths utilizados na página de carrinho.
+
+- **url.js**: `testSaucedemo - Fun/fatures/support/url.js`  
+  Arquivo que armazena as URLs utilizadas nos testes.
+
+### Arquivos de Definições de Etapas
+
+- **Steps.js**: `testSaucedemo - Fun/fatures/step_definitions/Steps.js`  
+  Arquivo com configurações globais de etapas.
+
+- **LoginPageSteps.js**: `testSaucedemo - Fun/fatures/step_definitions/LoginPageSteps.js`  
+  Arquivo que contém os métodos e funções utilizados na página de login.
+
+- **HomePageSteps.js**: `testSaucedemo - Fun/fatures/step_definitions/HomePageSteps.js`  
+  Arquivo que contém os métodos e funções utilizados na página Home.
+
+- **CartPageSteps.js**: `testSaucedemo - Fun/fatures/step_definitions/CartPageSteps.js`  
+  Arquivo que contém os métodos e funções utilizados na página de carrinho.
   
-- **LoginPageSteps.js**: `testSaucedemo - Fun/features/step_definitions/LoginPageSteps.js`  
-  Arquivo onde estão os métodos/funções utilizados na página de login.
-
-- **HomePageSteps.js**: `testSaucedemo - Fun/features/step_definitions/HomePageSteps.js`  
-  Arquivo onde estão os métodos/funções utilizados na página Home.
-
-- **CartPageSteps.js**: `testSaucedemo - Fun/features/step_definitions/CartPageSteps.js`  
-  Arquivo onde estão os métodos e funções utilizados na página de carrinho.
-
- **xpathsLoginPage.js**: `testSaucedemo - Fun/features/support/xpathsLoginPage.js`  
-Arquivo onde estão os XPaths utilizados na página de login.
-
- **xpathsHomePage.js**: `testSaucedemo - Fun/features/support/xpathsHomePage.js`  
-Arquivo onde estão os XPaths utilizados na página Home.
-
-- **xpathsCartPage.js**: `testSaucedemo - Fun/features/support/xpathsCartPage.js`  
-Arquivo onde estão os XPaths utilizados na página de carrinho.
-
-- **url.js**: `testSaucedemo - Fun/features/support/url.js`  
-  Arquivo onde estão as URLs utilizadas.  
-
 ---
 
 ## Páginas Automatizadas
